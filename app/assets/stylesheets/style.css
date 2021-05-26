@@ -184,27 +184,27 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.item__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.item__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.item__user{
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.item__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.item__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -214,15 +214,15 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.item__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+.item__btn{
   display: block;
   padding: 0.4em 1.6em;
-  font-size: 0.4em;
+  font-size: 1em;
   color: #999;
   text-decoration: none;
   user-select: none;
@@ -231,12 +231,12 @@ a {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
+.item__btn:hover{
   color: #fff;
   background: #999;
 }
 
-.prototype__comments{
+.item__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
