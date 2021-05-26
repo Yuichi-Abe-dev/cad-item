@@ -1,16 +1,19 @@
 <%= form_with model: @item, local: true do |f|%>
   <div class="field">
-    <%= f.label :name, "アイテムの名前" %><br />
+    <%= f.label :name, "アイテムの名前" %>
+    <span class="indispensable">必須</span><br />
     <%= f.text_field :name, id:"item_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :description, "説明文" %><br />
+    <%= f.label :description, "説明文" %>
+    <span class="indispensable">必須</span><br />
     <%= f.text_area :description, class: :form__text, id:"item_description" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "アイテムの画像" %><br />
+    <%= f.label :image, "アイテムの画像" %>
+    <span class="indispensable">必須</span><br />
     <%= f.file_field :image, id:"item_image" %>
   </div>
 
@@ -30,8 +33,9 @@
     <%= f.collection_select(:software_id, Software.all, :id, :name, {}, {class:"select-box", id:"item-software"}) %>
   </div>
 
-  <div class="field">
-    <%= f.label :version, "ソフトウェアのバージョン" %><br />
+  <div class="weight-bold-text">
+    <%= f.label :version, "ソフトウェアのバージョン" %>
+     <span class="indispensable">必須</span><br />
     <%= f.text_field :version, id:"item_version" %>
   </div>
 
