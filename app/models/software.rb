@@ -1,4 +1,4 @@
-class Software < ApplicationRecord
+class Software < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'Revit' },

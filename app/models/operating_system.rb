@@ -1,4 +1,4 @@
-class OperatingSystem < ApplicationRecord
+class OperatingSystem < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'Microsoft Windows' },
