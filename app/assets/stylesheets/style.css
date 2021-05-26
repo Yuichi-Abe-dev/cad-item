@@ -121,6 +121,22 @@ a {
   cursor: pointer;
 }
 
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.indispensable {
+  background: #000000;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 /* メイン */
 
 .greeting{
