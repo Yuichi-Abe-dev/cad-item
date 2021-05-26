@@ -1,0 +1,15 @@
+<div class="card">
+  <%= link_to image_tag(item.image, class: :card__img ), items_path(item.id)%>
+  <div class="card__body">
+    <%= link_to item.name, items_path(item.id), class: :card__title%>
+    <p class="card__summary">
+      <%= item.category.name %><br />
+      <%= item.software.name %>
+    </p>
+    <%#>ユーザーのページを作成後にリンク先を差し替える<%>
+    <div class="card__user">
+    <%= item.user.nickname %>
+    </div>
+    <%#= link_to item.user.nickname, "user_path(item.user_id)", class: :card__user %>
+  </div>
+</div>
