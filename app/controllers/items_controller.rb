@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update]
+  before_action :move_to_toppage, only: [:edit, :update, :destroy]
 
   def index
     @item = Item.includes(:user)
@@ -32,9 +34,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      redirect_to root_path
+    else
+      render item_path(@item.id)
+    end
+  end 
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :category_id, :software_id, :version, :operating_system_id, :status_id, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_toppage
+    redirect_to root_path if current_user.id != @item.user_id
   end
 
   def set_item
