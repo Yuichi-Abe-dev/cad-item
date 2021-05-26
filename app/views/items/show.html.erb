@@ -1,0 +1,80 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%#= @item.name%>
+      </p>
+      <%#>ユーザーのページを作成後にリンク先を差し替える<%>
+      <div class="prototype__user">
+      <%#= @item.user.nickname %>
+      </div>
+      <%#= link_to @item.user.name, user_path(@item.user_id), class: :prototype__user %>
+      <div class="prototype__image">
+        <%= image_tag(@item.image, class: :card__img ) %>
+      </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">アイテムの名前</th>
+          <td class="detail-value"><%= @item.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">説明文</th>
+          <td class="detail-value"><%= @item.description %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ユーザー名</th>
+          <td class="detail-value"><%= @item.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @item.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ソフトウェア</th>
+          <td class="detail-value"><%= @item.software.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">バージョン</th>
+          <td class="detail-value"><%= @item.version %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">オペレーティングシステム</th>
+          <td class="detail-value"><%= @item.operating_system.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ステータス</th>
+          <td class="detail-value"><%= @item.status.name %></td>
+        </tr>
+      </tbody>
+    </table>
+     <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", root_path, class: :prototype__btn %>
+          <%= link_to "削除する", root_path, class: :prototype__btn %>
+        </div>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <%# <%= form_with model: モデル名,local: true do |f|%>
+            <div class="field">
+              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.text_field :hoge, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%# <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <%# <% end %> 
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <li class="comments_list">
+              <%# <%= " コメントのテキスト "%>
+              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            </li>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
