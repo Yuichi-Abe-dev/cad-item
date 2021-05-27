@@ -150,3 +150,12 @@ ER図
 - belongs_to :item
 
 ## ローカルでの動作方法
+1. ターミナルを起動
+
+2. アプリケーションをダウンロードしたいカレントディレクトリに移動
+
+3. ターミナルで以下のコマンドを実行しアプリケーションをクローン
+% git clone https://github.com/Yuichi-Abe-dev/cad-item.git 
+
+4. データベースを作成
+% rails db:create
