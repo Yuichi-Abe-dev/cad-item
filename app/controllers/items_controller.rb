@@ -6,10 +6,12 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.includes(:user)
+    set_item_column 
+    set_category_column
   end
 
   def search
-    @results = @p.result.includes(:category)  # 検索条件にマッチした商品の情報を取得
+    @results = @p.result  # 検索条件にマッチした商品の情報を取得
   end
 
   def new
@@ -64,4 +66,13 @@ class ItemsController < ApplicationController
   def search_item
     @p = Item.ransack(params[:q])  # 検索オブジェクトを生成
   end
+
+  def set_item_column
+    @item_name = Item.select("name").distinct  # 重複なくnameカラムのデータを取り出す
+  end
+
+  def set_category_column
+    @category_name = Item.select("category_id").distinct
+  end
+
 end

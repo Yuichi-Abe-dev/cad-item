@@ -1,5 +1,11 @@
 <main class="main">
   <div class="inner">
+  <%= search_form_for @p, url: items_search_path do |f| %>
+    <%= f.label :category_id_eq, 'カテゴリー：' %>
+    <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
     <%# ログインしているときは以下を表示する %>
       <%# <div class="greeting"> %>
         <%# ユーザー名 %>
@@ -7,7 +13,7 @@
       <%# </div> %>
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
       <%= render partial: "item", collection: @item %>
     </div>
   </div>
