@@ -1,0 +1,44 @@
+<main class="main">
+  <div class="inner">
+<%= search_form_for @p, url: items_search_path do |f| %>
+    <%= f.label :category_id_eq, 'カテゴリー：' %>
+    <%= f.collection_select(:category_id_eq, Category.all, :id, :name, include_blank: '指定なし') %>
+    <br>
+    <%= f.label :category_id_eq, 'ソフトウェア：' %>
+    <%= f.collection_select(:software_id_eq, Software.all, :id, :name, include_blank: '指定なし') %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+<h1>
+  検索結果
+</h1>
+<%# 検索結果の個数で条件分岐 %>
+<% if @results.length !=0 %>
+<div class="inner">
+  <div class="card__wrapper">
+    <% @results.each do |result| %>
+      <div class="card">
+      <%= link_to image_tag(result.image, class: :card__img ), item_path(result.id)%>
+        <div class="card__body">
+        <%= link_to result.name, items_path(result.id), class: :card__title%>
+        <p class="card__summary">
+        <%= result.category.name %><br />
+        <%= result.software.name %>
+        </p>
+        <%#>ユーザーのページを作成後にリンク先を差し替える<%>
+          <div class="card__user">
+          <%= result.user.nickname %>
+          </div>
+        <%#= link_to item.user.nickname, "user_path(item.user_id)", class: :card__user %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+<% else %>
+  該当する商品はありません
+<% end %>
+<br>
+<%= link_to 'トップページへ戻る', root_path %>
+  </div>
+</main>

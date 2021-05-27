@@ -2,9 +2,17 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_toppage, only: [:edit, :update, :destroy]
+  before_action :search_item, only: [:index, :search]
 
   def index
     @item = Item.includes(:user)
+    set_item_column 
+    set_category_column
+    set_software_column
+  end
+
+  def search
+    @results = @p.result  # 検索条件にマッチした商品の情報を取得
   end
 
   def new
@@ -55,4 +63,21 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def search_item
+    @p = Item.ransack(params[:q])  # 検索オブジェクトを生成
+  end
+
+  def set_item_column
+    @item_name = Item.select("name").distinct  # 重複なくnameカラムのデータを取り出す
+  end
+
+  def set_category_column
+    @category_name = Item.select("category_id").distinct
+  end
+
+  def set_software_column
+    @software_name = Item.select("software_id").distinct
+  end
+
 end
