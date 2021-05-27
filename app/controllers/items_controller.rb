@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     @item = Item.includes(:user)
     set_item_column 
     set_category_column
+    set_software_column
   end
 
   def search
@@ -73,6 +74,10 @@ class ItemsController < ApplicationController
 
   def set_category_column
     @category_name = Item.select("category_id").distinct
+  end
+
+  def set_software_column
+    @software_name = Item.select("software_id").distinct
   end
 
 end
