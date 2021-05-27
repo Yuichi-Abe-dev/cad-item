@@ -66,6 +66,8 @@ Dynamo・Grasshopperなど作成できるビジュアルプログラムを売買
 - リクエスト機能
 
 ## データベース設計
+ER図
+![original_app-db_1](https://user-images.githubusercontent.com/66289694/119774830-bd7cad00-befd-11eb-8e30-eb1bdb0dfc9e.png)
 
 ## usersテーブル
 |Column            |Type  |Options    |
