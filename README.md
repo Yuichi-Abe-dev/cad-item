@@ -50,11 +50,16 @@ Dynamo・Grasshopperなど作成できるビジュアルプログラムを売買
 - ユーザー管理機能
 
 ユーザー登録、ログイン、ログアウト機能です。
+
 <img width="595" alt="スクリーンショット 2021-05-27 14 01 49" src="https://user-images.githubusercontent.com/66289694/119775032-00d71b80-befe-11eb-8a55-6e66105a6a78.png">
+
+<img width="669" alt="スクリーンショット 2021-05-27 14 01 02" src="https://user-images.githubusercontent.com/66289694/119775359-7347fb80-befe-11eb-98ee-548af914d690.png">
 
 - 投稿機能
 
 クリエイターが作品・ツールを投稿することが可能です。サムネイルの画像、アイテムの名前、説明文、カテゴリーなどを登録可能です。
+
+<img width="618" alt="スクリーンショット 2021-05-27 15 15 06" src="https://user-images.githubusercontent.com/66289694/119775295-61feef00-befe-11eb-81b2-968ebd9c4253.png">
 
 - 検索機能
 
