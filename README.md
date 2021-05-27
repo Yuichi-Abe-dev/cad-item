@@ -65,6 +65,9 @@ Dynamo・Grasshopperなど作成できるビジュアルプログラムを売買
 
 プルダウンメニューからカテゴリーやソフトウェアによるアイテムの検索をすることが可能です。
 
+<img width="918" alt="検索1" src="https://user-images.githubusercontent.com/66289694/119775907-36c8cf80-beff-11eb-932e-bf761986c4ed.png">
+<img width="918" alt="検索2" src="https://user-images.githubusercontent.com/66289694/119775923-3b8d8380-beff-11eb-90b0-860e64c404ff.png">
+
 ## 実装予定の機能
 - コメント機能
 - 購入機能
