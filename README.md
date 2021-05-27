@@ -50,6 +50,7 @@ Dynamo・Grasshopperなど作成できるビジュアルプログラムを売買
 - ユーザー管理機能
 
 ユーザー登録、ログイン、ログアウト機能です。
+<img width="595" alt="スクリーンショット 2021-05-27 14 01 49" src="https://user-images.githubusercontent.com/66289694/119775032-00d71b80-befe-11eb-8a55-6e66105a6a78.png">
 
 - 投稿機能
 
