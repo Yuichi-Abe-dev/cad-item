@@ -155,7 +155,7 @@ ER図
 2. アプリケーションをダウンロードしたいカレントディレクトリに移動
 
 3. ターミナルで以下のコマンドを実行しアプリケーションをクローン
-% git clone https://github.com/Yuichi-Abe-dev/cad-item.git 
+''' % git clone https://github.com/Yuichi-Abe-dev/cad-item.git '''
 
 4. データベースを作成
 % rails db:create
